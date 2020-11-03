@@ -1,0 +1,39 @@
+﻿@model Insurance_Company.Models.GruppyKlientov
+
+@{
+    ViewData["Title"] = "Редактирование — ";
+}
+
+<h1>Редактирование</h1>
+
+<h4>Группы клиентов</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="KodGruppy" />
+            <div class="form-group">
+                <label asp-for="Naimenovanie" class="control-label"></label>
+                <input asp-for="Naimenovanie" class="form-control" />
+                <span asp-validation-for="Naimenovanie" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Opisanie" class="control-label"></label>
+                <input asp-for="Opisanie" class="form-control" />
+                <span asp-validation-for="Opisanie" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Сохранить" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Вернуться назад</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

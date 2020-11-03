@@ -1,0 +1,30 @@
+﻿@model Insurance_Company.Models.GruppyKlientov
+
+@{
+    ViewData["Title"] = "Детали — ";
+}
+
+<h1>Детали</h1>
+
+<div>
+    <h4>GruppyKlientov</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Naimenovanie)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Naimenovanie)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Opisanie)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Opisanie)
+        </dd>
+    </dl>
+</div>
+<div style="color: lightgray">
+    <a asp-action="Edit" asp-route-id="@Model.KodGruppy"><font color="green">Редактировать</font></a> |
+    <a asp-action="Index">Вернуться назад</a>
+</div>

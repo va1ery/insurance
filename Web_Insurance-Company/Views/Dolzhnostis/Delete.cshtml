@@ -1,0 +1,45 @@
+﻿@model Insurance_Company.Models.Dolzhnosti
+
+@{
+    ViewData["Title"] = "Удаление — ";
+}
+
+<h1 style="color:firebrick">Удаление</h1>
+
+<h3>Вы дествительно хотите удалить это?</h3><br><br>
+<div>
+    <h4>Должности</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.NaimenovanieDolzhnosti)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NaimenovanieDolzhnosti)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Oklad)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Oklad)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Obyazannosti)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Obyazannosti)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Trebovaniya)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Trebovaniya)
+        </dd>
+    </dl>
+    <br>
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="KodDolzhnosti" />
+        <input type="submit" value="Удалить" class="btn btn-danger" /> |
+        <a asp-action="Index">Вернуться назад</a>
+    </form>
+</div>

@@ -1,0 +1,83 @@
+﻿@model IEnumerable<Insurance_Company.Models.Polisy>
+
+@{
+    ViewData["Title"] = "Полисы — ";
+}
+
+<h1>Полисы</h1>
+
+<p>
+    <a asp-action="Create">Создать</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.DataNachala)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataOkonchaniya)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Stoimost)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SummaVyplaty)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OtmetkaOVyplate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OtmetkaObOkonchanii)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.KodKlientaNavigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.KodSotrudnikaNavigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.KodVidaPolisaNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataNachala)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataOkonchaniya)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Stoimost)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SummaVyplaty)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OtmetkaOVyplate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OtmetkaObOkonchanii)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.KodKlientaNavigation.Adres)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.KodSotrudnikaNavigation.Adres)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.KodVidaPolisaNavigation.Naimenovanie)
+            </td>
+            <td style="color: lightgray">
+                <a asp-action="Edit" asp-route-id="@item.NomerPolisa"><font color="green">Редактировать</a> |
+                <a asp-action="Details" asp-route-id="@item.NomerPolisa">Детали</a> |
+                <a asp-action="Delete" asp-route-id="@item.NomerPolisa"><font color="FireBrick">Удалить</font></a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

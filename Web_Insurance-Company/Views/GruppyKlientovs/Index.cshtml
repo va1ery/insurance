@@ -1,0 +1,41 @@
+﻿@model IEnumerable<Insurance_Company.Models.GruppyKlientov>
+
+@{
+    ViewData["Title"] = "Группы клиентов — ";
+}
+
+<h1>Группы клиентов</h1>
+
+<p>
+    <a asp-action="Create">Создать</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Naimenovanie)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Opisanie)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Naimenovanie)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Opisanie)
+            </td>
+            <td style="color: lightgray">
+                <a asp-action="Edit" asp-route-id="@item.KodGruppy"><font color="green">Редактировать</a> |
+                <a asp-action="Details" asp-route-id="@item.KodGruppy">Детали</a> |
+                <a asp-action="Delete" asp-route-id="@item.KodGruppy"><font color="FireBrick">Удалить</font></a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

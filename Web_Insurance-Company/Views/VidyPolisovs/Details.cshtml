@@ -1,0 +1,42 @@
+﻿@model Insurance_Company.Models.VidyPolisov
+
+@{
+    ViewData["Title"] = "Детали — ";
+}
+
+<h1>Детали</h1>
+
+<div>
+    <h4>Виды полисов</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Naimenovanie)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Naimenovanie)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Opisanie)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Opisanie)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Usloviya)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Usloviya)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.KodRiskaNavigation)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.KodRiskaNavigation.Naimenovanie)
+        </dd>
+    </dl>
+</div>
+<div style="color: lightgray">
+    <a asp-action="Edit" asp-route-id="@Model.KodVidaPolisa"><font color="green">Редактировать</font></a> |
+    <a asp-action="Index">Вернуться назад</a>
+</div>

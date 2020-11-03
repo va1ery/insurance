@@ -1,0 +1,75 @@
+﻿@model Insurance_Company.Models.Polisy
+
+@{
+    ViewData["Title"] = "Создание — ";
+}
+
+<h1>Создание</h1>
+<br>
+<h4>Полисы</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="NomerPolisa" class="control-label"></label>
+                <input asp-for="NomerPolisa" class="form-control" />
+                <span asp-validation-for="NomerPolisa" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DataNachala" class="control-label"></label>
+                <input asp-for="DataNachala" class="form-control" />
+                <span asp-validation-for="DataNachala" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DataOkonchaniya" class="control-label"></label>
+                <input asp-for="DataOkonchaniya" class="form-control" />
+                <span asp-validation-for="DataOkonchaniya" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Stoimost" class="control-label"></label>
+                <input asp-for="Stoimost" class="form-control" />
+                <span asp-validation-for="Stoimost" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SummaVyplaty" class="control-label"></label>
+                <input asp-for="SummaVyplaty" class="form-control" />
+                <span asp-validation-for="SummaVyplaty" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OtmetkaOVyplate" class="control-label"></label>
+                <input asp-for="OtmetkaOVyplate" class="form-control" />
+                <span asp-validation-for="OtmetkaOVyplate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OtmetkaObOkonchanii" class="control-label"></label>
+                <input asp-for="OtmetkaObOkonchanii" class="form-control" />
+                <span asp-validation-for="OtmetkaObOkonchanii" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="KodVidaPolisa" class="control-label"></label>
+                <select asp-for="KodVidaPolisa" class ="form-control" asp-items="ViewBag.KodVidaPolisa"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="KodKlienta" class="control-label"></label>
+                <select asp-for="KodKlienta" class ="form-control" asp-items="ViewBag.KodKlienta"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="KodSotrudnika" class="control-label"></label>
+                <select asp-for="KodSotrudnika" class ="form-control" asp-items="ViewBag.KodSotrudnika"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Создать" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Вернуться назад</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

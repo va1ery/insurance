@@ -1,0 +1,71 @@
+﻿@model IEnumerable<Insurance_Company.Models.Sotrudniki>
+
+@{
+    ViewData["Title"] = "Сотрудники — ";
+}
+
+<h1>Сотрудники</h1>
+
+<p>
+    <a asp-action="Create">Создать</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Fio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataRozdeniya)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pol)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Adres)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Telefon)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PasportnyeDannye)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.KodDolzhnostiNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataRozdeniya)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pol)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Adres)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Telefon)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PasportnyeDannye)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.KodDolzhnostiNavigation.NaimenovanieDolzhnosti)
+            </td>
+            <td style="color: lightgray">
+                <a asp-action="Edit" asp-route-id="@item.KodSotrudnika"><font color="green">Редактировать</font></a> |
+                <a asp-action="Details" asp-route-id="@item.KodSotrudnika">Детали</a> |
+                <a asp-action="Delete" asp-route-id="@item.KodSotrudnika"><font color="FireBrick">Удалить</font></a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

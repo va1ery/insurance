@@ -1,0 +1,53 @@
+﻿@model IEnumerable<Insurance_Company.Models.VidyPolisov>
+
+@{
+    ViewData["Title"] = "Виды полисов - ";
+}
+
+<h1>Виды полисов</h1>
+
+<p>
+    <a asp-action="Create">Создать</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Naimenovanie)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Opisanie)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Usloviya)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.KodRiskaNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Naimenovanie)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Opisanie)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Usloviya)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.KodRiskaNavigation.Naimenovanie)
+            </td>
+            <td style="color: lightgray">
+                <a asp-action="Edit" asp-route-id="@item.KodVidaPolisa"><font color="green">Редактировать</a> |
+                <a asp-action="Details" asp-route-id="@item.KodVidaPolisa">Детали</a> |
+                <a asp-action="Delete" asp-route-id="@item.KodVidaPolisa"><font color="FireBrick">Удалить</font></a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,76 @@
+﻿@model Insurance_Company.Models.Polisy
+
+@{
+    ViewData["Title"] = "Удаление — ";
+}
+
+<h1 style="color: firebrick">Удаление</h1>
+
+<h3>Вы дествительно хотите удалить это?</h3>
+<br>
+<div>
+    <h4>Полисы</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DataNachala)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DataNachala)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DataOkonchaniya)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DataOkonchaniya)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Stoimost)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Stoimost)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.SummaVyplaty)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.SummaVyplaty)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.OtmetkaOVyplate)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.OtmetkaOVyplate)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.OtmetkaObOkonchanii)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.OtmetkaObOkonchanii)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.KodKlientaNavigation)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.KodKlientaNavigation.Adres)
+        </dd class>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.KodSotrudnikaNavigation)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.KodSotrudnikaNavigation.Adres)
+        </dd class>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.KodVidaPolisaNavigation)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.KodVidaPolisaNavigation.Naimenovanie)
+        </dd class>
+    </dl>
+    <br>
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="NomerPolisa" />
+        <input type="submit" value="Удалить" class="btn btn-danger" /> |
+        <a asp-action="Index">Вернуться назад</a>
+    </form>
+</div>
