@@ -18,11 +18,14 @@ namespace Insurance_Company.Data
                 //Klient[]
             {
             new
-Klienty{Fio="Ivan Yasenev", DataRozhdeniya=DateTime.Parse("1975-09-05"), Pol="", Adres="", Telefon="", PasportnyeDannye="", KodGruppy=1},
-                /*DataRozhdeniya=DateTime.Parse("1975-09-05")},
+Klienty{Fio="Ivan Yasenev",
+        DataRozhdeniya=DateTime.Parse("1975-09-05"),
+        Pol="", Adres="", Telefon="", PasportnyeDannye="", KodGruppy=1},
             new
-/*Klienty{FirstMidName="Anna",LastName="Alonso",DataRozhdeniya=DateTime.Parse("1986-12-25")},
-            new
+Klienty{Fio="Anna Alonso",
+        DataRozhdeniya=DateTime.Parse("1986-12-25"),
+        Pol="", Adres="", Telefon="", PasportnyeDannye="", KodGruppy=1},
+/*            new
 Klienty{FirstMidName="Peter",LastName="Nikitin",DataRozhdeniya=DateTime.Parse("1974-04-01")},
             new
 Klienty{FirstMidName="Michael",LastName="Barzdukas",DataRozhdeniya=DateTime.Parse("1988-07-26")},
